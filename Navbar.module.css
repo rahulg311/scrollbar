@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500;700&family=Poppins:wght@800&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+    color: #1D4E89;
+    margin-top: 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logoAndSearch {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4rem;
+    position: relative;
+    margin-right: 4rem;
+}
+
+.search {
+    border: 2px solid #C4C4C4;
+    border-radius: 30px;
+    padding: 1rem;
+    width: 20vw;
+}
+
+.search::placeholder {
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #828282;
+}
+
+.circle1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 1.1rem;
+    top: 2.5rem;
+    border-radius: 100px;
+    background: #F79256;
+}
+
+.circle2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 5.6rem;
+    top: 0.4rem;
+    border-radius: 100px;
+    background: #F79256;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    cursor: pointer;
+    margin-right: 4rem;
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.menuToggle {
+    display: block;
+    position: relative;
+    /* top: 5px; */
+    left: -50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+.menuToggle a:hover {
+    color: #1D4E89;
+}
+
+.menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+.menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #1D4E89;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+.menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+.menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #1D4E89;
+}
+
+.menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menu {
+    position: absolute;
+    overflow-y: scroll;
+    width: 100vw;
+    height: 200vh;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-200%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+.menuToggle input:checked~ul {
+    transform: none;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.hamburger {
+    display: none;
+}
+
+.dropdownHead {
+    cursor: pointer !important;
+    font-family: "Karla" !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+}
+
+.dropdownDiv {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.dropdownDiv1 {
+    background-color: #ededed !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+@media only screen and (max-width:1200px) {
+    .linksnav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        /* width: 10%; */
+    }
+
+    .logoAndSearch {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search {
+
+        width: 15rem;
+    }
+
+    .links {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .link {
+        cursor: pointer;
+        margin-top: 1rem;
+        font-family: "Karla";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .linksnav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    .navbar {
+   
+        padding: 1rem 10rem;
+        padding-right: 4rem;
+     
+        margin-top: 0;
+        position: sticky;
+        top: 0;
+        left: 0;
+       
+    }
+
+    .search {
+
+        width: 10rem;
+    }
+
+    .search::placeholder {
+
+        font-size: 1rem;
+
+    }
+}
